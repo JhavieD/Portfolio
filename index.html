@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jan Vincent M. Dominguez | Portfolio</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+          <a class="brand" href="#hero">JV<span class="brand-dot">.</span></a>
+
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a class="icon-btn" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i data-lucide="github"></i>
+            </a>
+            <a class="icon-btn" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a class="btn btn-primary btn-sm" href="#" download>
+              <i data-lucide="download"></i>
+              Resume
+            </a>
+            <button class="icon-btn mobile-toggle" id="menu-toggle" aria-label="Open menu">
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <div class="mobile-actions">
+            <a class="icon-btn" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i data-lucide="github"></i>
+            </a>
+            <a class="icon-btn" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a class="icon-btn" href="mailto:hello@example.com" aria-label="Email">
+              <i data-lucide="mail"></i>
+            </a>
+            <a class="btn btn-primary btn-block" href="#" download>
+              <i data-lucide="download"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-grid"></div>
+          <div class="hero-orb orb-1"></div>
+          <div class="hero-orb orb-2"></div>
+
+          <div class="container hero-content">
+            <div class="status-pill">
+              <span class="dot"></span>
+              Available for opportunities
+            </div>
+
+            <h1 class="hero-title">
+              <span>Jan Vincent</span>
+              <span class="text-gradient">Dominguez</span>
+            </h1>
+
+            <div class="hero-role">
+              <span class="line"></span>
+              <span>Full-Stack Developer</span>
+              <span class="line"></span>
+            </div>
+
+            <p class="hero-lead">
+              I craft clean, performant web experiences with a focus on
+              <strong>clarity</strong>, <strong>usability</strong>, and
+              <strong>robust delivery</strong>.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="#projects">
+                <i data-lucide="sparkles"></i>
+                View My Work
+              </a>
+              <a class="btn btn-ghost btn-lg" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="container">
+            <div class="section-head">
+              <span class="section-index">01.</span>
+              <h2>About Me</h2>
+              <span class="section-line"></span>
+            </div>
+
+            <div class="about-grid">
+              <div class="about-copy">
+                <p>
+                  I'm a full-stack developer with a passion for building products that make a difference.
+                  Currently pursuing my <strong>BS in Information Systems</strong> at
+                  <strong>De La Salle-College of Saint Benilde</strong>.
+                </p>
+                <p>
+                  My journey in tech started with curiosity and has evolved into a deep love for crafting
+                  seamless digital experiences. I thrive at the intersection of design and engineering,
+                  where thoughtful code meets beautiful interfaces.
+                </p>
+                <p>
+                  When I'm not coding, you'll find me exploring new technologies, contributing to
+                  open-source projects, or mentoring fellow developers.
+                </p>
+
+                <div class="skills">
+                  <h3>Technologies I work with</h3>
+                  <div class="chip-row">
+                    <span class="chip">React</span>
+                    <span class="chip">TypeScript</span>
+                    <span class="chip">Node.js</span>
+                    <span class="chip">Laravel</span>
+                    <span class="chip">REST APIs</span>
+                    <span class="chip">PostgreSQL</span>
+                    <span class="chip">Testing</span>
+                    <span class="chip">Git</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="highlight-grid">
+                <article class="highlight-card">
+                  <div class="icon-box">
+                    <i data-lucide="code-2"></i>
+                  </div>
+                  <h3>Clean Code</h3>
+                  <p>Writing maintainable, scalable code that stands the test of time.</p>
+                </article>
+                <article class="highlight-card">
+                  <div class="icon-box">
+                    <i data-lucide="palette"></i>
+                  </div>
+                  <h3>UI/UX Focus</h3>
+                  <p>Creating intuitive interfaces that users love to interact with.</p>
+                </article>
+                <article class="highlight-card">
+                  <div class="icon-box">
+                    <i data-lucide="database"></i>
+                  </div>
+                  <h3>Full-Stack</h3>
+                  <p>End-to-end development from database design to frontend polish.</p>
+                </article>
+                <article class="highlight-card">
+                  <div class="icon-box">
+                    <i data-lucide="zap"></i>
+                  </div>
+                  <h3>Performance</h3>
+                  <p>Optimizing for speed and efficiency at every layer.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="experience">
+          <div class="container">
+            <div class="section-head">
+              <span class="section-index">02.</span>
+              <h2>Experience</h2>
+              <span class="section-line"></span>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">
+                    <h3>Software Development Intern</h3>
+                    <span class="at">@</span>
+                    <span class="company">ACME Corp</span>
+                  </div>
+                  <div class="timeline-meta">
+                    <i data-lucide="calendar"></i>
+                    <span>2024</span>
+                  </div>
+                  <p>Built dashboards &amp; QA automation POC, contributing to improved development workflows.</p>
+                  <ul>
+                    <li>
+                      <i data-lucide="chevron-right"></i>
+                      Developed a Customer Relationship Management system
+                    </li>
+                    <li>
+                      <i data-lucide="chevron-right"></i>
+                      Streamlined client data handling and internal workflows
+                    </li>
+                    <li>
+                      <i data-lucide="chevron-right"></i>
+                      Built interactive calendar with real-time registration tracking
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="container">
+            <div class="section-subhead">
+              <h3>Key Projects</h3>
+            </div>
+            <div class="card-grid">
+              <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Internship Project</span>
+                  <a href="#" aria-label="Project link"><i data-lucide="external-link"></i></a>
+                </div>
+                <h4>CRM for Rakso CT</h4>
+                <p>Contributed to a Customer Relationship Management system, streamlining client data handling and improving workflows for sales and support teams.</p>
+                <div class="chip-row">
+                  <span class="chip">React</span>
+                  <span class="chip">Node.js</span>
+                  <span class="chip">PostgreSQL</span>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Internship Project</span>
+                  <a href="#" aria-label="Project link"><i data-lucide="external-link"></i></a>
+                </div>
+                <h4>Event Hub Module</h4>
+                <p>Developed a centralized event management module integrated into the Schoolaide app, featuring an interactive calendar and real-time registration tracking.</p>
+                <div class="chip-row">
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">REST API</span>
+                  <span class="chip">Calendar</span>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Leadership</span>
+                  <a href="#" aria-label="Project link"><i data-lucide="external-link"></i></a>
+                </div>
+                <h4>Blockbot Training Program</h4>
+                <p>Planned and coordinated the Blockbot training series, handling logistics and participant onboarding for a comprehensive learning experience.</p>
+                <div class="chip-row">
+                  <span class="chip">Project Management</span>
+                  <span class="chip">Training</span>
+                  <span class="chip">Coordination</span>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Leadership</span>
+                  <a href="#" aria-label="Project link"><i data-lucide="external-link"></i></a>
+                </div>
+                <h4>EdTech Partner Onboarding</h4>
+                <p>Led the on-site onboarding flow for EdTech partners, ensuring smooth integration and successful partnerships.</p>
+                <div class="chip-row">
+                  <span class="chip">Onboarding</span>
+                  <span class="chip">Partnerships</span>
+                  <span class="chip">Communication</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-reflections" id="reflections">
+          <div class="section-bg"></div>
+          <div class="container">
+            <div class="section-head">
+              <span class="section-index">03.</span>
+              <h2>Reflections</h2>
+              <span class="section-line"></span>
+            </div>
+
+            <div class="quote">
+              <i data-lucide="quote"></i>
+              <blockquote>"The best code is the code you don't have to explain."</blockquote>
+              <p class="quote-meta">— Personal philosophy</p>
+            </div>
+
+            <div class="card-grid reflections-grid">
+              <article class="reflection-card">
+                <div class="icon-box">
+                  <i data-lucide="target"></i>
+                </div>
+                <div>
+                  <span class="label">Lesson</span>
+                  <h3>Ship small, ship often.</h3>
+                  <span class="label muted">Commitment</span>
+                  <p>Break down work; daily increments with demos.</p>
+                </div>
+                <span class="glow"></span>
+              </article>
+              <article class="reflection-card">
+                <div class="icon-box">
+                  <i data-lucide="lightbulb"></i>
+                </div>
+                <div>
+                  <span class="label">Lesson</span>
+                  <h3>Design with constraints.</h3>
+                  <span class="label muted">Commitment</span>
+                  <p>Document trade-offs; validate early with users.</p>
+                </div>
+                <span class="glow"></span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="academic">
+          <div class="container">
+            <div class="section-subhead">
+              <div class="icon-heading">
+                <i data-lucide="graduation-cap"></i>
+                <h3>Academic Work</h3>
+              </div>
+            </div>
+
+            <div class="card-grid">
+              <article class="project-card">
+                <h4>Capstone: Smart Campus</h4>
+                <p><strong>Challenge:</strong> Unify disparate campus services into one portal.</p>
+                <p><strong>My Role:</strong> Lead frontend, UX flows, integration with auth.</p>
+                <div class="chip-row">
+                  <span class="chip">React</span>
+                  <span class="chip">UX Design</span>
+                  <span class="chip">Authentication</span>
+                </div>
+              </article>
+              <article class="project-card">
+                <h4>Case Study: Accessibility</h4>
+                <p><strong>Challenge:</strong> Improve WCAG compliance for core journeys.</p>
+                <p><strong>My Role:</strong> Audit + remediation plan; shipped component fixes.</p>
+                <div class="chip-row">
+                  <span class="chip">WCAG</span>
+                  <span class="chip">Accessibility</span>
+                  <span class="chip">Audit</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact" id="contact">
+          <div class="container contact-inner">
+            <div class="section-head center">
+              <span class="section-index">04.</span>
+              <h2>Get In Touch</h2>
+            </div>
+            <p class="contact-lead">
+              I'm currently looking for new opportunities and my inbox is always open.
+              Whether you have a question, a project idea, or just want to say hi —
+              I'll do my best to get back to you!
+            </p>
+            <div class="contact-meta">
+              <div class="meta-item">
+                <i data-lucide="map-pin"></i>
+                <span>Manila, Philippines</span>
+              </div>
+              <a class="meta-item" href="mailto:janvincent@example.com">
+                <i data-lucide="mail"></i>
+                <span>janvincent@example.com</span>
+              </a>
+            </div>
+            <a class="btn btn-primary btn-lg" href="mailto:janvincent@example.com">
+              <i data-lucide="send"></i>
+              Say Hello
+            </a>
+            <div class="contact-social">
+              <a class="icon-circle" href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="github"></i>
+              </a>
+              <a class="icon-circle" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a class="icon-circle" href="mailto:janvincent@example.com">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="footer-left">
+            <span>Designed &amp; Built with</span>
+            <i data-lucide="heart"></i>
+            <span>by Jan Vincent M. Dominguez</span>
+          </div>
+          <a class="footer-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="github"></i>
+            <span>View Source</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
