@@ -534,6 +534,13 @@ body {
   padding: 0 20px;
 }
 
+@media (max-width: 960px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+}
+
 .photo-item {
   position: relative;
   aspect-ratio: 3 / 4;
@@ -1220,19 +1227,23 @@ body {
     gap: 32px;
   }
 
+  .photo-item {
+    display: block !important;
+  }
+
   .photo-item:nth-child(1),
   .photo-item:nth-child(2),
   .photo-item:nth-child(3) {
-    transform: none;
+    transform: none !important;
   }
 
   .photo-item:nth-child(2) {
-    transform: none;
+    transform: none !important;
   }
 
   .photo-item:hover,
   .photo-item:nth-child(2):hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02) !important;
   }
 }
 
