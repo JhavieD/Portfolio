@@ -313,7 +313,7 @@ body {
 .hero-title {
   font-family: "Sora", "Inter", sans-serif;
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 1.10;
   font-size: clamp(2.8rem, 7vw, 5.6rem);
   margin: 0 0 18px;
 }
@@ -326,6 +326,7 @@ body {
   display: inline-block;
   background: linear-gradient(135deg, hsl(35, 100%, 60%), hsl(45, 100%, 70%));
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -404,6 +405,35 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 28px;
+}
+
+.carousel-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+}
+
+.card-rail {
+  position: relative;
 }
 
 .icon-heading {
@@ -586,9 +616,42 @@ body {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 6px 4px 12px;
+  scroll-snap-type: none;
+  position: relative;
+}
+
+.card-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-grid::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.card-grid::before,
+.card-grid::after {
+  content: "";
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card-grid::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--background), transparent);
+}
+
+.card-grid::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--background), transparent);
 }
 
 .project-card,
@@ -607,6 +670,11 @@ body {
   border-color: hsla(35, 100%, 55%, 0.35);
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+}
+
+.project-card {
+  min-width: 360px;
+  scroll-snap-align: none;
 }
 
 .project-top {
@@ -633,6 +701,27 @@ body {
 .project-card p {
   margin: 0 0 12px;
   color: var(--muted);
+}
+
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 4px -6px 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-thumb img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.03);
 }
 
 .section-reflections {
@@ -671,7 +760,16 @@ body {
 }
 
 .reflections-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  overflow-x: visible;
+  padding: 0;
+}
+
+.reflections-grid::before,
+.reflections-grid::after {
+  display: none;
 }
 
 .reflection-card {
@@ -719,6 +817,7 @@ body {
   margin: 4px 0 0;
   color: var(--muted);
 }
+
 
 .contact {
   text-align: center;
