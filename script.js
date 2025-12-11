@@ -65,5 +65,60 @@ document.addEventListener("DOMContentLoaded", () => {
     prevBtn?.addEventListener("click", () => scrollTrack(track, "prev"));
     nextBtn?.addEventListener("click", () => scrollTrack(track, "next"));
   });
+
+  // Modal functionality
+  const modalTriggers = document.querySelectorAll(".modal-trigger");
+  const modals = document.querySelectorAll(".modal");
+  const modalCloses = document.querySelectorAll(".modal-close");
+
+  const openModal = (modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+      window.lucide.createIcons();
+    }
+  };
+
+  const closeModal = (modal) => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  };
+
+  modalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      const modalId = trigger.getAttribute("data-modal");
+      if (modalId && !e.target.closest("a")) {
+        openModal(modalId);
+      }
+    });
+  });
+
+  modalCloses.forEach((close) => {
+    close.addEventListener("click", () => {
+      const modal = close.closest(".modal");
+      if (modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  modals.forEach((modal) => {
+    const overlay = modal.querySelector(".modal-overlay");
+    overlay?.addEventListener("click", () => {
+      closeModal(modal);
+    });
+  });
+
+  // Close modal on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modals.forEach((modal) => {
+        if (modal.classList.contains("active")) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
 });
 

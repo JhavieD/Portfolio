@@ -179,6 +179,18 @@
                 </article>
               </div>
             </div>
+
+            <div class="photo-gallery">
+              <div class="photo-item">
+                <img src="https://drive.google.com/thumbnail?id=1kQYJXaYMF_qx9Dvs0a7qD66KybV2iieh&sz=w1000" alt="Portrait photo 1" loading="lazy" />
+              </div>
+              <div class="photo-item">
+                <img src="https://drive.google.com/thumbnail?id=13FAOSFa-RKMR-sDupJ-8PpGBTy4xNU1U&sz=w1000" alt="Portrait photo 2" loading="lazy" />
+              </div>
+              <div class="photo-item">
+                <img src="https://drive.google.com/thumbnail?id=16_B7SVtdd_KuxOj6FNMR6PENrq2_uOH9&sz=w1000" alt="Portrait photo 3" loading="lazy" />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -241,7 +253,7 @@
             </div>
             <div class="card-rail">
               <div class="card-grid" id="projects-track">
-              <article class="project-card">
+              <article class="project-card modal-trigger" data-modal="crm-modal">
                 <div class="project-top">
                   <span class="tag">Internship Project</span>
                   <!-- <a href="#" aria-label="Project link"><i data-lucide="external-link"></i></a> -->
@@ -333,7 +345,7 @@
                   <span class="label">Lesson</span>
                   <h3>The "Why" Before The "How" (Systems Thinking)</h3>
                   <span class="label muted">Commitment</span>
-                  <p>"Code is just a tool; the solution is the goal." My time in Information Systems taught me that the hardest part of development isn't syntax, it's understanding the problem. I commit to always asking "why are we building this?" to ensure every line of logic serves a real purpose.</p>
+                  <p><strong>"Code is just a tool; the solution is the goal."</strong> My time in Information Systems taught me that the hardest part of development isn't syntax, it's understanding the problem. I commit to always asking "why are we building this?" to ensure every line of logic serves a real purpose.</p>
                 </div>
                 <span class="glow"></span>
               </article>
@@ -342,10 +354,10 @@
                   <i data-lucide="heart-handshake"></i>
                 </div>
                 <div>
-                  <span class="label">Stewardship</span>
-                  <h3>Service Through Code</h3>
-                  <span class="label muted">Commitment</span>
-                  <p>"I commit to documenting my code so others don't struggle." I believe that good engineering is an act of empathy. I promise to write clean, well-documented logic that makes life easier for my teammates and future developers.</p>
+                  <span class="label">Zeal for Service</span>
+                  <h3>Service Through Community</h3>
+                  <span class="label muted">Reflection</span>
+                  <p><strong>"The most meaningful part of my degree was helping others get theirs."</strong> My life at Benilde wasn't just about clearing my own checklist; it was about the late nights, the group efforts, and the shared struggles. I found that my best moments in college were not when I stood out, but when I stepped up to help a friend or teammate cross the finish line with me.</p>
                 </div>
                 <span class="glow"></span>
               </article>
@@ -358,7 +370,7 @@
                   <span class="label">Growth Mindset</span>
                   <h3>Continuous Evolution</h3>
                   <span class="label muted">Commitment</span>
-                  <p>"To become better than I was yesterday, every single day." Graduation isn't the finish line. My goal is to maintain a habit of daily incremental improvement, sharpening my backend skills and leadership abilities 1% at a time.</p>
+                  <p><strong>"To become better than I was yesterday, every single day."</strong> Graduation isn't the finish line. My goal is to maintain a habit of daily incremental improvement, sharpening my backend skills and leadership abilities 1% at a time.</p>
                 </div>
                 <span class="glow"></span>
               </article>
@@ -377,6 +389,12 @@
 
             <div class="card-grid">
               <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Capstone Project</span>
+                  <a href="https://drive.google.com/file/d/1DSFOJ6wEHLgwYddzV2lMpyHnbfeUFHtX/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch video" class="video-link">
+                    <i data-lucide="play"></i>
+                  </a>
+                </div>
                 <h4>Capstone: PawMatch</h4>
                 <p><strong>Challenge:</strong> Fragmented shelter data making the adoption process inefficient.</p>
                 <p><strong>My Role:</strong> Lead Developer &amp; Project Manager</p>
@@ -391,6 +409,17 @@
               </article>
             
               <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Academic Project</span>
+                  <div class="project-links">
+                    <a href="https://www.youtube.com/watch?v=mVgzyoEcOro" target="_blank" rel="noopener noreferrer" aria-label="Watch video" class="video-link">
+                      <i data-lucide="play"></i>
+                    </a>
+                    <a href="https://docs.google.com/document/d/1rIF858QwoPA4cPBnjcN_migiJiSFj-dPq4i2Rr_8pV4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View document" class="video-link">
+                      <i data-lucide="file-text"></i>
+                    </a>
+                  </div>
+                </div>
                 <h4>IoT Pet Feeder</h4>
                 <p><strong>Challenge:</strong> Maintaining consistent feeding schedules remotely.</p>
                 <p><strong>My Role:</strong> Embedded Developer (IoT)</p>
@@ -405,6 +434,12 @@
               </article>
             
               <article class="project-card">
+                <div class="project-top">
+                  <span class="tag">Academic Project</span>
+                  <a href="https://github.com/JhavieD/Meysmook-Expense-Tracker" target="_blank" rel="noopener noreferrer" aria-label="View source code" class="video-link">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
                 <h4>Meysmook</h4>
                 <p><strong>Challenge:</strong> Students struggling to track expenses and manage budgets effectively.</p>
                 <p><strong>My Role:</strong> Full-Stack Developer</p>
@@ -474,6 +509,40 @@
           </a>
         </div>
       </footer> -->
+    </div>
+
+    <!-- CRM Modal -->
+    <div class="modal" id="crm-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="modal-header">
+          <h2>CRM for Rakso CT</h2>
+          <p>Project Gallery</p>
+        </div>
+        <div class="modal-gallery">
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 1" loading="lazy" />
+          </div>
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 2" loading="lazy" />
+          </div>
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 3" loading="lazy" />
+          </div>
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 4" loading="lazy" />
+          </div>
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 5" loading="lazy" />
+          </div>
+          <div class="modal-image">
+            <img src="" alt="CRM screenshot 6" loading="lazy" />
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
