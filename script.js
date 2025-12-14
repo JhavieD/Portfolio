@@ -118,7 +118,129 @@ document.addEventListener("DOMContentLoaded", () => {
           closeModal(modal);
         }
       });
+      closeLightbox();
     }
+  });
+
+  // Lightbox functionality
+  const lightbox = document.getElementById("image-lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxClose = document.querySelector(".lightbox-close");
+  const lightboxOverlay = document.querySelector(".lightbox-overlay");
+  const lightboxPrev = document.querySelector(".lightbox-prev");
+  const lightboxNext = document.querySelector(".lightbox-next");
+
+  let currentImageIndex = 0;
+  let imageArray = [];
+
+  // Build array of images from the active modal
+  const buildImageArray = (modal) => {
+    if (!modal) return;
+    const clickableImages = modal.querySelectorAll(".clickable-image img");
+    imageArray = Array.from(clickableImages).map((img) => ({
+      src: img.getAttribute("data-fullsize") || img.src,
+      alt: img.getAttribute("alt") || "Image",
+    }));
+  };
+
+  const updateNavigationButtons = () => {
+    if (lightboxPrev && lightboxNext) {
+      lightboxPrev.disabled = currentImageIndex === 0;
+      lightboxNext.disabled = currentImageIndex === imageArray.length - 1;
+    }
+  };
+
+  const openLightbox = (imageIndex, modal) => {
+    if (lightbox && lightboxImage && imageArray.length > 0) {
+      currentImageIndex = imageIndex;
+      const image = imageArray[currentImageIndex];
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+      updateNavigationButtons();
+      window.lucide.createIcons();
+    }
+  };
+
+  const closeLightbox = () => {
+    if (lightbox) {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  };
+
+  const showNextImage = () => {
+    if (currentImageIndex < imageArray.length - 1) {
+      currentImageIndex++;
+      const image = imageArray[currentImageIndex];
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      updateNavigationButtons();
+    }
+  };
+
+  const showPrevImage = () => {
+    if (currentImageIndex > 0) {
+      currentImageIndex--;
+      const image = imageArray[currentImageIndex];
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      updateNavigationButtons();
+    }
+  };
+
+  // Set up click handlers for all clickable images in all modals
+  modals.forEach((modal) => {
+    const clickableImages = modal.querySelectorAll(".clickable-image img");
+    clickableImages.forEach((img, index) => {
+      img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        // Build image array from the current modal
+        buildImageArray(modal);
+        openLightbox(index, modal);
+      });
+    });
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+  lightboxOverlay?.addEventListener("click", closeLightbox);
+  lightboxPrev?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    showPrevImage();
+  });
+  lightboxNext?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    showNextImage();
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (lightbox && lightbox.classList.contains("active")) {
+      if (e.key === "ArrowLeft") {
+        showPrevImage();
+      } else if (e.key === "ArrowRight") {
+        showNextImage();
+      }
+    }
+  });
+
+  // Direct lightbox opening from photo grid
+  const directLightboxTriggers = document.querySelectorAll(".direct-lightbox");
+  directLightboxTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const modalId = trigger.getAttribute("data-modal");
+      const imageIndex = parseInt(trigger.getAttribute("data-image-index"), 10);
+      const modal = document.getElementById(modalId);
+      
+      if (modal && !isNaN(imageIndex)) {
+        // Build image array from the modal
+        buildImageArray(modal);
+        // Open lightbox directly at the specified image index
+        openLightbox(imageIndex, modal);
+      }
+    });
   });
 });
 
