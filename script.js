@@ -224,23 +224,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
-  // Direct lightbox opening from photo grid
-  const directLightboxTriggers = document.querySelectorAll(".direct-lightbox");
-  directLightboxTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const modalId = trigger.getAttribute("data-modal");
-      const imageIndex = parseInt(trigger.getAttribute("data-image-index"), 10);
-      const modal = document.getElementById(modalId);
-      
-      if (modal && !isNaN(imageIndex)) {
-        // Build image array from the modal
-        buildImageArray(modal);
-        // Open lightbox directly at the specified image index
-        openLightbox(imageIndex, modal);
-      }
-    });
-  });
 });
 
